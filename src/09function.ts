@@ -41,7 +41,7 @@ function add7(x: number, ...rest: number[]) {
 // 好处：不需要为相似功能的函数，使用不同的函数名称，增强函数的可读性。
 
 // ts中略有不同。
-// 要求先定义一系列名称相同的函数声明
+// 要求先定义一系列名称相同的函数声明（函数重载列表）
 // 然后在一个类型最宽泛的版本中，实现这个重载
 function add8(...rest: number[]): number
 function add8(...rest: string[]): string
