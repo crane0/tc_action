@@ -6,7 +6,8 @@
 // import './11class2'
 // import './12class_interface'
 // import './14generics_class'
-import './15advanced1'
+// import './15advanced1'
+import './16advanced2'
 
 let hello : string = 'Hello ts'
 document.querySelectorAll('.app')[0].innerHTML = hello
