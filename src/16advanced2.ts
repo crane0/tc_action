@@ -10,6 +10,13 @@ X 兼容 Y，X（目标类型） = Y（源类型）
 源类型，必须具备目标类型的必要属性
 */
 
+/* 
+口诀：
+结构之间兼容：成员少的，兼容成员多的，
+函数之间兼容：参数多的，兼容参数少的。
+*/
+
+
 // 当关闭tsconfig中strictNullChecks时，string可被赋值null
 let advan: string = 'a'
 advan = null
@@ -141,8 +148,47 @@ let num: number = Fruit.Apple
 // 静态成员和构造函数，是不参与比较的
 // 如果2个类具有相同的实例成员，则实例就可以相互兼容
 class A {
+  constructor(p: number, q: number) {}
   static sta = 1
-  constructor() {
-    
-  }
+  id: number = 2
+  // private pri: string = 'aa'
 }
+class B {
+  constructor(p: number) {}
+  id: number = 3
+}
+let aa = new A(1, 2)
+let bb = new B(4)
+// 2个实例完全兼容，因为都具有实例成员 id
+aa = bb
+bb = aa
+
+// 如果2个类含有私有成员，则不兼容，
+// 但如果2个类具有相同的实例成员，并且是父类和子类之间，是相互兼容的。
+class S extends A {}
+let ss = new S(1, 2)
+ss = aa
+aa = ss
+
+// 泛型兼容性
+// 泛型接口
+interface Empty<T> {
+  // 如果有成员，只有类型参数T，被接口成员使用时，才会影响泛型的兼容
+  // value: T
+}
+let objadv1: Empty<number> = {}
+let objadv2: Empty<string> = {}
+// 如果泛型接口中，没有任何成员，就可以相互兼容
+objadv1 = objadv2
+objadv2 = objadv1
+
+// 泛型函数
+let logadv1 = <T>(a: T): T => {
+  return a
+}
+let logadv2 = <T>(b: T): T => {
+  return b
+}
+// 如果2个泛型函数的定义相同，但没有指定类型参数，则可以相互兼容
+logadv1 = logadv2
+logadv2 = logadv1
