@@ -121,3 +121,28 @@ function overload(a: any, b: any): any {}
 
 
 // 枚举类型兼容
+enum Fruit {
+  Apple, Banana
+}
+enum Color {
+  Red, Blue
+}
+// 和number类型是相互兼容的
+let fruit: Fruit.Apple = 2
+let num: number = Fruit.Apple
+
+// 枚举之间，是不兼容的
+// let color: Color.Red = Fruit.Apple
+
+
+
+// 类兼容性
+// 和接口相似，只比较结构
+// 静态成员和构造函数，是不参与比较的
+// 如果2个类具有相同的实例成员，则实例就可以相互兼容
+class A {
+  static sta = 1
+  constructor() {
+    
+  }
+}
