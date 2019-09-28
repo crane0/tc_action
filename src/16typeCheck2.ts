@@ -19,7 +19,7 @@ X 兼容 Y，X（目标类型） = Y（源类型）
 
 // 当关闭tsconfig中strictNullChecks时，string可被赋值null
 let advan: string = 'a'
-advan = null
+// advan = null
 // 可以说，string类型是兼容null类型的
 // 换句话说，null是string的子类型
 

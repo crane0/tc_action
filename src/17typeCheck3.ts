@@ -53,6 +53,7 @@ function getLanguage(type: Type, x: number | string) {
     x.toFixed(2)
   }
 
+  // 3类型保护函数
   if (isJava(lang)) {
     lang.helloJava()
   } else {
