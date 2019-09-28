@@ -3,8 +3,8 @@
 // 基础类型推断
 // 2种情况
 // （1）初始化变量时，
-// let a: any
-let a
+// let atc: any
+let atc
 // let a1: number
 let a1 = 1
 

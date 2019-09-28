@@ -59,3 +59,11 @@ ReturnType接受一个函数做参数
 */
 // string | number
 type T7AF4 = ReturnType<() => string | number>
+
+/* 
+ReturnType实现：
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+
+infer，待推断，需要根据实际的情况确定
+如果返回值是R，那就是R，否则就是any
+*/

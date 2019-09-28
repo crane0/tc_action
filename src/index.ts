@@ -10,7 +10,7 @@
 // import './16typeCheck2'
 // import './17typeCheck3'
 // import './18AdvancedFeatures1'
-import './19AdvancedFeatures2'
+import './part1/19AdvancedFeatures2'
 
 let hello : string = 'Hello ts'
 document.querySelectorAll('.app')[0].innerHTML = hello
