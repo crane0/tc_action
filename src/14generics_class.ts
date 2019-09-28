@@ -26,7 +26,6 @@ logc2.run({a: 'log'})
 
 
 // 类型约束
-
 interface Length {
   length: number
 }
