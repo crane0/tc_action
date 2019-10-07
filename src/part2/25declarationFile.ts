@@ -4,7 +4,7 @@
 
 /* 
 类库
-全局类库，
+全局类库，（需要在index.html中引入）
 模块类库
 umd类库
   可以通过全局的方式引用（配合webpack插件实现），也可以用模块化的方式引用
@@ -50,4 +50,39 @@ export as namespace 名称（umd库，该语句不可缺少）
 
 另外，umd库一般是通过模块引入的，如果在模块中，通过全局引入使用，ts会有错误提示，
 allowUmdGlobalAccess 设置为 false  即可。
+*/
+
+
+/* 
+插件
+*/
+
+// 模块插件，为模块类库添加自定义的方法，
+
+// import m from 'moment'
+// // 需要使用declare来声明一下即可。
+// declare module 'moment' {
+//   export function myFunction(): void
+// }
+// m.myFunction = () => {}
+
+
+
+// 全局插件，为全局类库添加自定义方法，
+import moduleLib from './25libs/module-lib'
+// declare global 只能用于环境模块声明中，所以上面的import为了将这个文件变为环境模块。
+declare global {
+  namespace globalLib {
+    function doAnything(): void
+  }
+}
+// 对全局的命名空间，造成了一定的污染（不建议这样做）
+globalLib.doAnything = () => {}
+
+
+/* 
+声明文件的依赖
+如果一个模块比较大，编写声明文件就会很麻烦，
+会对整体进行拆分，分别编写声明文件，
+此时，声明文件之间就会有依赖关系。
 */
