@@ -28,7 +28,7 @@ let aSTA: ASTA = {
   y: 1
 }
 
-// 函数成员，每一个函数，都会被声明为函数重载。在接口重定义的，就是函数重载的列表。
+// 函数成员，每一个函数，都会被声明为函数重载。在接口中定义的，就是函数重载的列表。
 interface BSTA {
   foo(bar: number): number // 5
   foo(bar: 'a'): number // 1
@@ -104,7 +104,7 @@ namespace ESTA {
 /*
 声明合并——命名空间和枚举
 
-同名的命名空间，相当于给枚举类型，增加了一个方法
+同名的命名空间，相当于给枚举类型，增加了一个属性或方法
 */
 enum FSTA { 
   Red,
@@ -112,8 +112,11 @@ enum FSTA {
   Blue
 }
 namespace FSTA {
-  export function mix() {}
+  export let item = 'color'
+  // export function mix() {}
 }
+
+console.log(FSTA)
 
 
 // 注意，命名空间和函数，类在一起合并时，要放在其后，否则会报错
