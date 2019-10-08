@@ -11,7 +11,10 @@
 // import './17typeCheck3'
 // import './18AdvancedFeatures1'
 // import './part1/19AdvancedFeatures2'
-import './part2/24statementMerger'
+// import './part2/24statementMerger'
 
 let hello : string = 'Hello ts'
 document.querySelectorAll('.app')[0].innerHTML = hello
+
+// es2019数组扁平化
+// console.log([1, 2, [3, 4]].flat())
