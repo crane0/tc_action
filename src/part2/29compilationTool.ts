@@ -23,3 +23,8 @@ npm i fork-ts-checker-webpack-plugin -D
 const forkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 引入后，直接 new forkTsCheckerWebpackPlugin() 即可
 */
+
+
+/* 
+在新的分支 29babel 中，记录了关于 babel + ts 实现的一些要点。
+*/
