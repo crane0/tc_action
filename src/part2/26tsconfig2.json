@@ -30,41 +30,43 @@
     "noEmitOnError": true,                        /* 当发生错误时，不输出文件 */
 
     // 这2个需配合使用
-    "noEmitHelpers": true,                        /* 不生成 helper 函数，需额外安装ts-helpers */
+    "noEmitHelpers": true,                        /* 不生成 helper 函数（起辅助作用，但代码体积会增加。比如class类编译为es5时就会有），需额外安装ts-helpers。 */
     "importHelpers": true,                        /* 通过tslib 引入 helper 函数，文件必须是模块 */
 
+    "downlevelIteration": true,            /* 降级遍历器的实现（es3/5），如果开启，比如数组的一些方法就会以es3的方式实现，可能会引入 helper 函数。 */
+    
     // "composite": true,                     /* Enable project compilation */
-    // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
-    // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
-    // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
     // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
 
-    /* Strict Type-Checking Options */
-    "strict": true,                           /* Enable all strict type-checking options. */
-    // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
-    // "strictNullChecks": true,              /* Enable strict null checks. */
-    // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
-    // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
-    // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
-    // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
-    // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+    /* 类型检查的选项，如果strict为true，则下面7个默认也会是true */
+    "strict": true,                           /* 开启所有的严格类型检查 */
+    "alwaysStrict": true,                  /* 在代码中注入 "use strict" */
+    "noImplicitAny": true,                 /* 不允许隐式的 any 类型，即函数参数必须有类型注解 */
+    "strictNullChecks": true,              /* 不允许把 null undefined 赋值给其他类型变量 */
+    "strictFunctionTypes": true,           /* 不允许函数参数的双向协变 */
+    "strictPropertyInitialization": true,  /* 类的实例属性，必须初始化 */
+    "strictBindCallApply": true,           /* 严格的 'bind', 'call', 'apply' 方法传入参数类型检查 */
+    "noImplicitThis": true,                /* 不允许 this 有隐式的 any 类型 */
 
-    /* Additional Checks */
-    // "noUnusedLocals": true,                /* Report errors on unused locals. */
-    // "noUnusedParameters": true,            /* Report errors on unused parameters. */
-    // "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
-    // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
+    /* 和函数相关的选项，只会显示错误，不会阻碍编译 */
+    "noUnusedLocals": true,                /* 检查只声明未使用的，局部变量 */
+    "noUnusedParameters": true,            /* 检查未使用的，函数参数 */
+    "noFallthroughCasesInSwitch": true,    /* 防止 switch 语句贯穿 */
+    "noImplicitReturns": true,             /* 每个分支都要有返回值（if else 2个分支也都要有） */
 
     /* Module Resolution Options */
-    // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
-    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
-    // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
+    "esModuleInterop": true,               /* 如果模块以 export = 的方式导出，既可以用 import from 的方式导入，也可以用 import = 的方式导入。 */
+    "allowUmdGlobalAccess": true,          /* 允许在模块中访问 UMD 全局变量 */
+    "moduleResolution": "node",            /* 模块解析策略（当引入一个模块后，查找顺序，绝对相对路径也有区别），默认 node ，还可以是classic， */
+    "baseUrl": "./",                       /* 解析非相对模块的基地址 */
+    "paths": {"jquery": ["node_modules/jquery/dist/jquery.slim.min.js"]},     /* 路径映射（相对于baseUrl），比如指定jquery的指定版本*/
+    "rootDirs": ["src", "out"],          /* 运行时，将多个目录放在一个虚拟目录下，比如在index.ts中使用相对路径引入其他的模块，但编译后的路径可能会有问题，因为index.html的位置会发生变化。如果将这2个目录放在一起，编译后也不会发生变化了。 */
+
+    "listEmittedFiles": true,           /* 打印输出文件 */
+    "listFiles": true           /* 打印编译的文件（包括引用的声明文件） */
     // "oots": [],                       /* List of folders to include type definitions from. */
     // "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
-    "esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
     // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
-    // "allowUmdGlobalAccess": true,          /* Allow accessing UMD globals from modules. */
 
     /* Source Map Options */
     // "sourceRoot": "",                      /* Specify the location where debugger should locate TypeScript files instead of source locations. */
