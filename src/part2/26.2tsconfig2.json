@@ -35,7 +35,6 @@
 
     "downlevelIteration": true,            /* 降级遍历器的实现（es3/5），如果开启，比如数组的一些方法就会以es3的方式实现，可能会引入 helper 函数。 */
     
-    // "composite": true,                     /* Enable project compilation */
     // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
 
     /* 类型检查的选项，如果strict为true，则下面7个默认也会是true */

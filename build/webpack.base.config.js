@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const forkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 module.exports = {
     entry: './src/index.ts',
@@ -26,6 +27,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/tpl/index.html'
-        })
+        }),
+        new forkTsCheckerWebpackPlugin()
     ]
 }
