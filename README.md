@@ -104,9 +104,24 @@ export = s
 3. 2种编译工具不要混用，否则会增加项目的复杂度。
 
 
-## 2，31讲，jest单元测试——babel-jest
+## 2，31讲：jest单元测试——babel-jest
 
-### 2.1，先安装依赖
+### 2.1，安装依赖
 ```
 npm i jest babel-jest @types/jest -D
 ```
+
+### 2.2，配置脚本
+```
+"test": "jest"
+```
+
+### 2.3，测试用例
+
+在根目录下，/test/test.ts 就是测试用例，
+
+运行 `npm run test`即可。
+
+会发现，babel无法做类型检查。
+
+因为在 /test/test.ts 中，有一个明显的错误，并没有提示错误。
