@@ -1,4 +1,4 @@
-这是 29讲：编译工具
+## 1， 29讲：编译工具
 
 简答的 Babel + ts 的工程配置，
 
@@ -102,3 +102,11 @@ export = s
 1. 项目中没有使用过 babel，则首选 ts 自身的编译器 （可配合 ts-loader 使用）
 2. 已经使用了babel，安装 @babel/preset-typescript （可配合 tsc 做类型检查）
 3. 2种编译工具不要混用，否则会增加项目的复杂度。
+
+
+## 2，31讲，jest单元测试——babel-jest
+
+### 2.1，先安装依赖
+```
+npm i jest babel-jest @types/jest -D
+```
