@@ -1,11 +1,20 @@
-# tc_action
+## 项目介绍
 
-src文件夹下，
+### 1，在src文件夹下，
 
-## part1
+- part1
+
 基础篇21讲
 
-## part2
+- part2
+
 工程篇10讲
 
-22，ES6和CommonJS模块系统
+### 2，其他分支
+
+`29babel` 分支，是和以下内容有关联，具体的要点，在该分支对应的 READEME.md 中有写。
+
+第29讲：编译工具——babel，
+
+第31讲：jest单元测试——babel-jest
+
