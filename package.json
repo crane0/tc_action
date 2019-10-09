@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development --config ./build/webpack.config.js",
     "build": "webpack --mode=production --config ./build/webpack.config.js",
+    "lint": "eslint src --ext .js, .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
