@@ -75,3 +75,12 @@ commonJS的导出，只要有了次级导出，exports.x = 'xx'，
 
 
 // 文件中只要有 import 或 export ，这个文件就是一个模块!
+
+/* 
+在后面的课程中发现（第38节），
+声明文件导出使用 export = xx
+导入使用需要使用：import a = require(es6模块) 或 import a from 'es6模块'
+才不会有问题，
+
+否则无法使用导入函数的类型推断。
+*/
